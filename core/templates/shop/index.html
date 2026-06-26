@@ -1,0 +1,893 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique laboratory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background:
+                radial-gradient(circle at top center, rgba(124, 159, 255, 0.08), transparent 32%),
+                radial-gradient(circle at 85% 20%, rgba(167, 139, 250, 0.08), transparent 28%),
+                #080b12;
+            color: #e8eaf0;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 48px;
+            height: 68px;
+            background: rgba(8, 11, 18, 0.82);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .nav-logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #7c9fff, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-center {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-center a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #9aa0b0;
+            transition: color 0.2s;
+        }
+
+        .nav-center a:hover {
+            color: #e8eaf0;
+        }
+
+        .nav-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .profile-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7c9fff, #a78bfa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .profile-name {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        .profile-role {
+            display: block;
+            font-size: 0.72rem;
+            color: #9aa0b0;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: #e8eaf0;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .mobile-menu {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 68px;
+            left: 0;
+            right: 0;
+            background: #0d1120;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            z-index: 99;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .mobile-menu.open {
+            max-height: 200px;
+        }
+
+        .mobile-menu a {
+            padding: 16px 28px;
+            font-size: 0.9rem;
+            color: #9aa0b0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .mobile-menu a:hover {
+            color: #e8eaf0;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 24px 80px;
+            overflow: hidden;
+        }
+
+        .hero-glow-1 {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(124, 159, 255, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-glow-2 {
+            position: absolute;
+            bottom: -80px;
+            right: 10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(167, 139, 250, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(124, 159, 255, 0.25);
+            border-radius: 50px;
+            padding: 8px 18px;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #7c9fff;
+            margin-bottom: 28px;
+            background: rgba(124, 159, 255, 0.06);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+        }
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #7c9fff;
+            box-shadow: 0 0 8px #7c9fff;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.6rem, 6vw, 5rem);
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #7c9fff, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            max-width: 520px;
+            font-size: 1rem;
+            color: #8a90a0;
+            line-height: 1.7;
+            margin-bottom: 48px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            padding: 18px 22px;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat { min-width: 90px; }
+
+        .stat-num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #7c9fff, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #9aa0b0;
+            margin-top: 2px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 36px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, rgba(124, 159, 255, 0.6), transparent);
+            margin: 0 auto;
+            animation: scrollAnim 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollAnim {
+            0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+            50% { opacity: 1; transform: scaleY(1); }
+            100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; }
+        }
+
+        .products {
+            padding: 100px 48px;
+            position: relative;
+        }
+
+        .products::before {
+            content: "";
+            position: absolute;
+            inset: 40px 48px auto;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(124, 159, 255, 0.2), transparent);
+            pointer-events: none;
+        }
+
+        .products-shell {
+            max-width: 1320px;
+            margin: 0 auto;
+        }
+
+        .products-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .section-tag {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #7c9fff;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .section-title .dim {
+            display: block;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #6a7080;
+            margin-top: 4px;
+            letter-spacing: 0;
+        }
+
+        .products-note {
+            max-width: 420px;
+            font-size: 0.88rem;
+            color: #7f8697;
+            line-height: 1.7;
+            text-align: right;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            grid-column: span 3;
+            position: relative;
+            background: linear-gradient(180deg, rgba(22, 28, 45, 0.95), rgba(10, 13, 22, 0.95));
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(124, 159, 255, 0.08), transparent 40%, rgba(167, 139, 250, 0.08));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(124, 159, 255, 0.28);
+            box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
+        }
+
+        .card:hover::before { opacity: 1; }
+
+        .card-image-area { padding: 18px 18px 0; }
+
+        .card-media {
+            display: grid;
+            gap: 10px;
+            min-height: 210px;
+        }
+
+        .media-single { grid-template-columns: 1fr; }
+
+        .media-box {
+            position: relative;
+            min-height: 100px;
+            border-radius: 16px;
+            overflow: hidden;
+            background: white;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .media-box::after {
+            content: "";
+            position: absolute;
+            inset: auto 10px 10px auto;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(8, 11, 18, 0.28);
+            filter: blur(10px);
+            pointer-events: none;
+        }
+
+        .media-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            max-height: 300px;
+            display: block;
+        }
+
+        .card-body {
+            padding: 20px 22px 22px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-tag {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #7c9fff;
+            margin-bottom: 10px;
+        }
+
+        .card-name {
+            font-size: 1.08rem;
+            font-weight: 750;
+            color: #e8eaf0;
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            font-size: 0.82rem;
+            color: #7a8090;
+            line-height: 1.65;
+            min-height: 80px;
+        }
+
+        .about {
+            padding: 100px 48px;
+            background: rgba(255, 255, 255, 0.015);
+        }
+
+        .about-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .about-text p {
+            font-size: 0.92rem;
+            color: #7a8090;
+            line-height: 1.8;
+            margin-top: 16px;
+        }
+
+        .about-text strong { color: #e8eaf0; }
+
+        .about-features {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 18px 18px 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-text h4 {
+            font-size: 0.92rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .feature-text p {
+            font-size: 0.82rem;
+            color: #7a8090;
+            line-height: 1.6;
+        }
+
+        footer {
+            padding: 48px 48px 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-main {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .footer-logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #7c9fff, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-tagline {
+            font-size: 0.78rem;
+            color: #6a7080;
+            margin-top: 6px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 0.82rem;
+            color: #7a8090;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: #e8eaf0; }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-copy {
+            font-size: 0.78rem;
+            color: #6a7080;
+        }
+
+        .footer-copy span { color: #9aa0b0; }
+
+        .footer-socials { display: flex; gap: 10px; }
+
+        .social-btn {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #9aa0b0;
+            transition: all 0.2s;
+        }
+
+        .social-btn:hover {
+            border-color: rgba(124, 159, 255, 0.4);
+            color: #7c9fff;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .no-products {
+            grid-column: span 12;
+            text-align: center;
+            padding: 60px 20px;
+            color: #7a8090;
+            font-size: 0.92rem;
+        }
+
+        @media(max-width:1200px) {
+            .card { grid-column: span 6; }
+            .products-note { text-align: left; }
+        }
+
+        @media(max-width:900px) {
+            nav { padding: 0 24px; }
+            .nav-center, .profile-name, .profile-role { display: none; }
+            .hamburger { display: flex; }
+            .hero h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
+            .products, .about { padding: 80px 24px; }
+            .products::before { inset: 32px 24px auto; }
+            .products-header { flex-direction: column; align-items: flex-start; }
+            .about-inner { grid-template-columns: 1fr; gap: 48px; }
+            footer { padding: 48px 24px 32px; }
+        }
+
+        @media(max-width:600px) {
+            .hero-stats { gap: 24px; flex-wrap: wrap; justify-content: center; }
+            .card { grid-column: span 12; }
+            .card-desc { min-height: auto; }
+            .footer-main { flex-direction: column; gap: 18px; }
+            .footer-bottom { flex-direction: column; gap: 16px; align-items: flex-start; }
+        }
+
+        .category-bar {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            margin-top: 10px;
+        }
+
+        .category-btn {
+            padding: 9px 18px;
+            border-radius: 40px;
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            border: 1px solid rgba(255, 255, 255, .08);
+            color: #9aa0b0;
+            background: rgba(255, 255, 255, .02);
+            cursor: pointer;
+            transition: .25s;
+        }
+
+        .category-btn:hover {
+            border-color: rgba(124, 159, 255, .4);
+            color: #e8eaf0;
+        }
+
+        .category-btn.active {
+            background: linear-gradient(135deg, #7c9fff, #a78bfa);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#" class="nav-logo">Unique laboratory</a>
+        <ul class="nav-center">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <div class="nav-profile">
+            <div class="profile-avatar">UL</div>
+            <div>
+                <span class="profile-name">Unique laboratory Team</span>
+                <span class="profile-role">Performance Nutrition</span>
+            </div>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <div class="hero-glow-1"></div>
+        <div class="hero-glow-2"></div>
+
+        <div class="hero-badge fade-up">
+            <span class="badge-dot"></span>
+            Premium Performance Line
+        </div>
+
+        <h1 class="fade-up">
+            Precision Fuel For
+            <span class="highlight">Modern Training</span>
+        </h1>
+
+        <p class="hero-desc fade-up">
+            Unique laboratory delivers a focused product lineup built around performance, recovery,
+            and everyday consistency with a clean premium presentation.
+        </p>
+
+        <div class="hero-stats fade-up">
+            <div class="stat">
+                {# تعداد محصولات از دیتابیس #}
+                <div class="stat-num">{{ products_count }}</div>
+                <div class="stat-label">Products</div>
+            </div>
+            <div class="stat">
+                {# تعداد دسته‌بندی‌ها از دیتابیس #}
+                <div class="stat-num">{{ categories_count|stringformat:"02d" }}</div>
+                <div class="stat-label">Core Lines</div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTS ===== -->
+    <section class="products" id="products">
+        <div class="products-shell">
+            <div class="products-header fade-up">
+                <div>
+                    <div class="section-tag">Collection</div>
+                    <h2 class="section-title">
+                        Featured Products
+                        <span class="dim">A complete range built for training, recovery, and daily support.</span>
+                    </h2>
+                </div>
+                <p class="products-note">
+                    Explore the complete lineup with a clean fixed grid layout designed to highlight each product
+                    through simple content and multiple image formats.
+                </p>
+            </div>
+
+            <!-- Category filter buttons — data-filter باید با slug دسته‌بندی match بده -->
+            <div class="category-bar">
+                <button class="category-btn active" data-filter="all">All</button>
+                {% for cat in categories %}
+                <button class="category-btn" data-filter="{{ cat.title|lower }}">{{ cat.title }}</button>
+                {% endfor %}
+            </div>
+
+            <div class="product-grid">
+                {% for product in products %}
+                <div class="card fade-up" data-category="{{ product.category.first.title|lower }}">
+                    <div class="card-image-area">
+                        <div class="card-media media-single">
+                            <div class="media-box">
+                                <img src="{{ product.image.url }}" alt="{{ product.title }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag">{{ product.category.first.title }}</div>
+                        <div class="card-name">{{ product.title }}</div>
+                        <div class="card-desc">{{ product.description }}</div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="no-products">No products found.</div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about">
+        <div class="about-inner">
+            <div class="about-text fade-up">
+                <div class="section-tag">About</div>
+                <h2 class="section-title">Built Around A Clean Product Experience</h2>
+                <p>
+                    Unique laboratory is structured to present modern sports nutrition in a way that feels
+                    <strong>clear, premium, and performance-led</strong>. The visual system focuses on strong contrast,
+                    refined spacing, and a dark interface that keeps the products central.
+                </p>
+                <p>
+                    From daily essentials to training support formulas, every product is displayed with a consistent
+                    layout that allows the content, category, and images to remain the primary focus without unnecessary
+                    distractions.
+                </p>
+            </div>
+
+            <div class="about-features fade-up">
+                <div class="feature-item">
+                    <div class="feature-icon">01</div>
+                    <div class="feature-text">
+                        <h4>Clean Structure</h4>
+                        <p>A simplified layout that keeps the product presentation direct and easy to scan.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">02</div>
+                    <div class="feature-text">
+                        <h4>Flexible Media</h4>
+                        <p>Cards support one, two, or three images while preserving a consistent visual rhythm.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">03</div>
+                    <div class="feature-text">
+                        <h4>Premium Feel</h4>
+                        <p>The existing interface keeps its dark polished identity with subtle gradients and soft depth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-main">
+            <div>
+                <div class="footer-logo">Unique laboratory</div>
+                <div class="footer-tagline">Performance Nutrition Presentation</div>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#about">About</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-copy">© 2026 <span>Unique laboratory</span>. All rights reserved.</div>
+            <div class="footer-socials">
+                <a href="#" class="social-btn">IG</a>
+                <a href="#" class="social-btn">X</a>
+                <a href="#" class="social-btn">IN</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== Category filter =====
+        const categoryButtons = document.querySelectorAll(".category-btn");
+        const productCards = document.querySelectorAll(".product-grid .card");
+
+        categoryButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const filter = button.dataset.filter;
+
+                categoryButtons.forEach(btn => btn.classList.remove("active"));
+                button.classList.add("active");
+
+                productCards.forEach(card => {
+                    const category = card.dataset.category;
+                    card.style.display = (filter === "all" || filter === category) ? "block" : "none";
+                });
+            });
+        });
+
+        // ===== Mobile menu =====
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+
+        // ===== Fade-up on scroll =====
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
