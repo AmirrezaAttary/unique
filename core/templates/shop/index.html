@@ -172,7 +172,7 @@
             text-align: center;
             padding: 130px 24px 50px;
             overflow: hidden;
-            background-color: white;
+            background-color: #eef1f8;
             margin-top: -750px;
         }
 
@@ -180,54 +180,14 @@
             content: "";
             position: absolute;
             inset: 0;
-            opacity: 0.8;
-            background-image: url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %}),
-            url({% static 'img/logo3.png' %});
-
-            background-repeat: no-repeat;
-
-            background-size:
-                180px, 220px, 150px, 260px, 190px,
-                140px, 300px, 170px, 210px, 160px,
-                250px, 130px, 200px, 240px, 175px,
-                160px, 190px, 230px, 150px, 210px,
-                180px, 140px, 260px, 200px, 170px;
-
-            background-position:
-                4% 8%, 72% 15%, 22% 40%, 88% 55%, 10% 72%,
-                55% 5%, 33% 90%, 95% 30%, 60% 65%, 15% 25%,
-                78% 80%, 45% 45%, 5% 95%, 68% 35%, 40% 12%,
-                12% 50%, 82% 70%, 5% 15%, 90% 10%, 48% 95%,
-                25% 60%, 75% 50%, 35% 20%, 65% 85%, 50% 40%;
-
+            background-image: url({% static 'img/image.png' %});
+            background-repeat: repeat;
+            background-position: center;
+            background-size: 340px;
+            opacity: 0.08;
             z-index: 0;
-            
             pointer-events: none;
         }
-
 
         .hero-glow-1 {
             position: absolute;
@@ -983,16 +943,7 @@
 
     <!-- ===== NAV ===== -->
     <nav>
-        <div style="display: flex;">   
-             <div>
-                <img style="width: 150px;" src="{% static 'img/logo3.png' %}">
-            </div>
-            <div style="display: flex; flex-direction: column;">
-                <a href="#" class="nav-logo">Unique </a>
-                <a href="#" class="nav-logo">laboratory </a>
-            </div>
-        
-        </div>
+        <a href="#" class="nav-logo">Unique laboratory</a>
         <ul class="nav-center">
             <li><a href="#home">Home</a></li>
             <li><a href="#products">Products</a></li>
