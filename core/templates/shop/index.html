@@ -180,31 +180,31 @@
             content: "";
             position: absolute;
             inset: 0;
-            background-image: url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %}),
-            url({% static 'img/image.jpg' %});
+            background-image: url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %}),
+            url({% static 'img/logo.png' %});
 
             background-repeat: no-repeat;
 
@@ -981,7 +981,15 @@
 
     <!-- ===== NAV ===== -->
     <nav>
-        <a href="#" class="nav-logo">Unique laboratory</a>
+        <div style="display: flex;">
+            <div style="display: flex; flex-direction: column;">
+                <a href="#" class="nav-logo">Unique </a>
+                <a href="#" class="nav-logo">laboratory </a>
+            </div>
+            <div>
+                <img src="{% static 'img/logo.png' %}">
+            </div>
+        </div>
         <ul class="nav-center">
             <li><a href="#home">Home</a></li>
             <li><a href="#products">Products</a></li>
