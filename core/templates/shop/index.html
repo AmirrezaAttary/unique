@@ -172,6 +172,20 @@
             text-align: center;
             padding: 100px 24px 80px;
             overflow: hidden;
+            background-color: #eef1f8;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url({% static 'img/image.png' %});
+            background-repeat: repeat;
+            background-position: center;
+            background-size: 340px;
+            opacity: 0.5;
+            z-index: 0;
+            pointer-events: none;
         }
 
         .hero-glow-1 {
@@ -193,6 +207,17 @@
             height: 400px;
             background: radial-gradient(circle, rgba(96, 165, 250, 0.07) 0%, transparent 70%);
             pointer-events: none;
+        }
+
+        .hero-glow-1,
+        .hero-glow-2,
+        .hero-badge,
+        .hero h1,
+        .hero-desc,
+        .hero-stats,
+        .scroll-indicator {
+            position: relative;
+            z-index: 1;
         }
 
         .hero-badge {
@@ -906,27 +931,6 @@
             .ul-modal-name {
                 font-size: 1.2rem;
             }
-        }
-
-        .hero {
-            background-image: url({% static 'img/image.png' %});
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            /* یا contain، بسته به نیازت */
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: inherit;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            opacity: 0.5;
-            z-index: 0;
-            pointer-events: none;
         }
     </style>
 </head>
