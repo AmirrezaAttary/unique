@@ -180,11 +180,31 @@
             content: "";
             position: absolute;
             inset: 0;
-            background-image: url({% static 'img/image.jpg' %});
-            background-repeat: repeat;
-            background-position: center;
-            background-size: 340px;
-            opacity: 0.08;
+            background-image: url({% static 'img/image.jpg' %}),
+            url({% static 'img/image.jpg' %}),
+            url({% static 'img/image.jpg' %}),
+            url({% static 'img/image.jpg' %}),
+            url({% static 'img/image.jpg' %}),
+            url({% static 'img/image.jpg' %}),
+            url({% static 'img/image.jpg' %}),
+            url({% static 'img/image.jpg' %}),
+            url({% static 'img/image.jpg' %}),
+            url({% static 'img/image.jpg' %}),
+            url({% static 'img/image.jpg' %}),
+            url({% static 'img/image.jpg' %}),
+            url({% static 'img/image.jpg' %}),
+            url({% static 'img/image.jpg' %}),
+            url({% static 'img/image.jpg' %});
+            background-repeat: no-repeat;
+            background-size:
+                180px, 220px, 150px, 260px, 190px,
+                140px, 300px, 170px, 210px, 160px,
+                250px, 130px, 200px, 240px, 175px;
+            background-position:
+                4% 8%, 72% 15%, 22% 40%, 88% 55%, 10% 72%,
+                55% 5%, 33% 90%, 95% 30%, 60% 65%, 15% 25%,
+                78% 80%, 45% 45%, 5% 95%, 68% 35%, 40% 12%;
+
             z-index: 0;
             pointer-events: none;
         }
