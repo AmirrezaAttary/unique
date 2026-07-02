@@ -222,8 +222,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
         }
 
         .hero h1 {
@@ -259,7 +266,9 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
         }
 
-        .stat { min-width: 90px; }
+        .stat {
+            min-width: 90px;
+        }
 
         .stat-num {
             font-size: 1.8rem;
@@ -291,9 +300,22 @@
         }
 
         @keyframes scrollAnim {
-            0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
-            50% { opacity: 1; transform: scaleY(1); }
-            100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; }
+            0% {
+                opacity: 0;
+                transform: scaleY(0);
+                transform-origin: top;
+            }
+
+            50% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scaleY(1);
+                transform-origin: bottom;
+            }
         }
 
         /* ===== PRODUCTS ===== */
@@ -392,9 +414,13 @@
             box-shadow: 0 20px 48px rgba(37, 99, 235, 0.12);
         }
 
-        .card:hover::before { opacity: 1; }
+        .card:hover::before {
+            opacity: 1;
+        }
 
-        .card-image-area { padding: 18px 18px 0; }
+        .card-image-area {
+            padding: 18px 18px 0;
+        }
 
         .card-media {
             display: grid;
@@ -402,7 +428,9 @@
             min-height: 210px;
         }
 
-        .media-single { grid-template-columns: 1fr; }
+        .media-single {
+            grid-template-columns: 1fr;
+        }
 
         .media-box {
             position: relative;
@@ -484,7 +512,9 @@
             margin-top: 16px;
         }
 
-        .about-text strong { color: #111827; }
+        .about-text strong {
+            color: #111827;
+        }
 
         .about-features {
             display: flex;
@@ -557,7 +587,9 @@
             transition: color 0.2s;
         }
 
-        .footer-links a:hover { color: #111827; }
+        .footer-links a:hover {
+            color: #111827;
+        }
 
         .footer-bottom {
             display: flex;
@@ -572,9 +604,14 @@
             color: #9ca3af;
         }
 
-        .footer-copy span { color: #6b7280; }
+        .footer-copy span {
+            color: #6b7280;
+        }
 
-        .footer-socials { display: flex; gap: 10px; }
+        .footer-socials {
+            display: flex;
+            gap: 10px;
+        }
 
         .social-btn {
             width: 34px;
@@ -679,8 +716,15 @@
         }
 
         @keyframes modalIn {
-            from { opacity: 0; transform: scale(0.85) translateY(28px); }
-            to   { opacity: 1; transform: scale(1) translateY(0); }
+            from {
+                opacity: 0;
+                transform: scale(0.85) translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
         }
 
         .ul-modal-img {
@@ -777,30 +821,112 @@
 
         /* ===== RESPONSIVE ===== */
         @media(max-width:1200px) {
-            .card { grid-column: span 6; }
-            .products-note { text-align: left; }
+            .card {
+                grid-column: span 6;
+            }
+
+            .products-note {
+                text-align: left;
+            }
         }
 
         @media(max-width:900px) {
-            nav { padding: 0 24px; }
-            .nav-center, .profile-name, .profile-role { display: none; }
-            .hamburger { display: flex; }
-            .hero h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
-            .products, .about { padding: 80px 24px; }
-            .products::before { inset: 32px 24px auto; }
-            .products-header { flex-direction: column; align-items: flex-start; }
-            .about-inner { grid-template-columns: 1fr; gap: 48px; }
-            footer { padding: 48px 24px 32px; }
+            nav {
+                padding: 0 24px;
+            }
+
+            .nav-center,
+            .profile-name,
+            .profile-role {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 8vw, 3.5rem);
+            }
+
+            .products,
+            .about {
+                padding: 80px 24px;
+            }
+
+            .products::before {
+                inset: 32px 24px auto;
+            }
+
+            .products-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .about-inner {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            footer {
+                padding: 48px 24px 32px;
+            }
         }
 
         @media(max-width:600px) {
-            .hero-stats { gap: 24px; flex-wrap: wrap; justify-content: center; }
-            .card { grid-column: span 12; }
-            .card-desc { min-height: auto; }
-            .footer-main { flex-direction: column; gap: 18px; }
-            .footer-bottom { flex-direction: column; gap: 16px; align-items: flex-start; }
-            .ul-modal-img { height: 220px; }
-            .ul-modal-name { font-size: 1.2rem; }
+            .hero-stats {
+                gap: 24px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .card {
+                grid-column: span 12;
+            }
+
+            .card-desc {
+                min-height: auto;
+            }
+
+            .footer-main {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
+            }
+
+            .ul-modal-img {
+                height: 220px;
+            }
+
+            .ul-modal-name {
+                font-size: 1.2rem;
+            }
+        }
+
+        .hero {
+            background-image: url({% static 'img/image.png' %});
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            /* یا contain، بسته به نیازت */
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: inherit;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: 0.5;
+            z-index: 0;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -836,7 +962,7 @@
     </div>
 
     <!-- ===== HERO ===== -->
-    <section style="background-image: url({% static 'img/image.png' %});" class="hero" id="home">
+    <section class="hero" id="home">
         <div class="hero-glow-1"></div>
         <div class="hero-glow-2"></div>
 
@@ -957,7 +1083,8 @@
                     <div class="feature-icon">03</div>
                     <div class="feature-text">
                         <h4>Premium Feel</h4>
-                        <p>The existing interface keeps its light polished identity with subtle gradients and soft depth.</p>
+                        <p>The existing interface keeps its light polished identity with subtle gradients and soft
+                            depth.</p>
                     </div>
                 </div>
             </div>
@@ -1050,14 +1177,14 @@
         const overlay = document.getElementById('productOverlay');
 
         function openModal(card) {
-            const imgEl  = card.querySelector('.media-box img');
-            const catEl  = card.querySelector('.card-tag');
+            const imgEl = card.querySelector('.media-box img');
+            const catEl = card.querySelector('.card-tag');
             const nameEl = card.querySelector('.card-name');
             const descEl = card.querySelector('.card-desc');
 
-            document.getElementById('modalImg').src = imgEl  ? imgEl.src       : '';
+            document.getElementById('modalImg').src = imgEl ? imgEl.src : '';
             document.getElementById('modalImg').alt = nameEl ? nameEl.textContent.trim() : '';
-            document.getElementById('modalCat').textContent  = catEl  ? catEl.textContent.trim()  : '';
+            document.getElementById('modalCat').textContent = catEl ? catEl.textContent.trim() : '';
             document.getElementById('modalName').textContent = nameEl ? nameEl.textContent.trim() : '';
             document.getElementById('modalDesc').textContent = descEl ? descEl.textContent.trim() : '';
 
@@ -1087,4 +1214,5 @@
     </script>
 
 </body>
+
 </html>
