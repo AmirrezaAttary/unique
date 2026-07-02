@@ -242,7 +242,7 @@
             text-align: center;
             overflow: hidden;
             background-color: transparent;
-            margin-top: -750px;
+            margin-top: -850px;
             z-index: 1;
         }
 
@@ -1002,20 +1002,6 @@
 
     <!-- ===== NAV ===== -->
     <nav>
-        <a href="#" class="nav-logo"
-            style="display: flex; align-items: center; gap: 12px; text-decoration: none; max-height: 150px;">
-            <img src="{% static 'img/logo5.png' %}" alt="Logo"
-                style="width: auto; height: 100%; max-height: 40px; object-fit: contain;">
-            <div style="display: flex; flex-direction: column; line-height: 1.2;">
-                <span style="font-size: clamp(1rem, 2.5vw, 1.5rem);">Unique</span>
-                <span style="font-size: clamp(1rem, 2.5vw, 1.5rem);">laboratory</span>
-            </div>
-        </a>
-        <ul class="nav-center">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
         <div class="nav-profile">
             <div class="profile-avatar">UL</div>
             <div>
@@ -1028,6 +1014,20 @@
                 <span></span>
             </button>
         </div>
+        <ul class="nav-center">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <a href="#" class="nav-logo"
+            style="display: flex; align-items: center; gap: 12px; text-decoration: none; max-height: 150px;">
+            <img src="{% static 'img/logo5.png' %}" alt="Logo"
+                style="width: auto; height: 100%; max-height: 40px; object-fit: contain;">
+            <div style="display: flex; flex-direction: column; line-height: 1.2;">
+                <span style="font-size: clamp(1rem, 2.5vw, 1.5rem);">Unique</span>
+                <span style="font-size: clamp(1rem, 2.5vw, 1.5rem);">laboratory</span>
+            </div>
+        </a>
     </nav>
 
     <div class="mobile-menu" id="mobileMenu">
@@ -1043,9 +1043,10 @@
 
         <div class="hero-glow-1"></div>
         <div class="hero-glow-2"></div>
-        
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <img src="{% static 'img/logo5.png' %}" alt="Logo" style="width: 100%; max-width: 250px; height: auto;">
+
+        <div
+            style="display: flex; justify-content: center; align-items: center; margin-top: 30px; margin-bottom: 30px;">
+            <img src="{% static 'img/logo4.png' %}" alt="Logo" style="width: 100%; max-width: 250px; height: auto;">
         </div>
 
         <div class="hero-badge fade-up">
