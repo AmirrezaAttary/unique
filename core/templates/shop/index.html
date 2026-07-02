@@ -177,9 +177,65 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url({% static 'img/image.png' %});
-            background-repeat: repeat;
-            background-size: 340px;
+            background-image: url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %}),
+            url({% static 'img/logo4.png' %});
+            background-position:
+                5% 8%, 23% 15%, 67% 12%, 89% 6%, 34% 22%,
+                12% 35%, 78% 28%, 45% 41%, 91% 38%, 28% 51%,
+                56% 47%, 8% 63%, 72% 58%, 38% 69%, 94% 71%,
+                19% 78%, 62% 83%, 85% 89%, 41% 92%, 7% 95%,
+                73% 3%, 26% 18%, 51% 9%, 97% 24%, 14% 44%,
+                68% 33%, 31% 56%, 84% 49%, 49% 67%, 22% 85%,
+                76% 76%, 3% 19%, 58% 96%, 93% 61%, 36% 4%,
+                65% 87%, 11% 72%, 81% 44%, 47% 29%, 24% 64%;
+            background-repeat: no-repeat;
+            background-size:
+                340px, 340px, 340px, 340px, 340px,
+                340px, 340px, 340px, 340px, 340px,
+                340px, 340px, 340px, 340px, 340px,
+                340px, 340px, 340px, 340px, 340px,
+                340px, 340px, 340px, 340px, 340px,
+                340px, 340px, 340px, 340px, 340px,
+                340px, 340px, 340px, 340px, 340px,
+                340px, 340px, 340px, 340px, 340px;
             opacity: 0.1;
             z-index: -1;
             pointer-events: none;
@@ -195,10 +251,10 @@
             text-align: center;
             overflow: hidden;
             background-color: transparent;
-            /* شفاف تا بک‌گراند بادی دیده شود */
             margin-top: -750px;
             z-index: 1;
         }
+
 
 
         .hero-glow-1 {
@@ -955,7 +1011,15 @@
 
     <!-- ===== NAV ===== -->
     <nav>
-        <a href="#" class="nav-logo">Unique laboratory</a>
+        <a href="#" class="nav-logo"
+            style="display: flex; align-items: center; gap: 12px; text-decoration: none; max-height: 150px;">
+            <img src="{% static 'img/logo5.png' %}" alt="Logo"
+                style="width: auto; height: 100%; max-height: 150px; object-fit: contain;">
+            <div style="display: flex; flex-direction: column; line-height: 1.2;">
+                <span style="font-size: clamp(1rem, 2.5vw, 1.5rem);">Unique</span>
+                <span style="font-size: clamp(1rem, 2.5vw, 1.5rem);">laboratory</span>
+            </div>
+        </a>
         <ul class="nav-center">
             <li><a href="#home">Home</a></li>
             <li><a href="#products">Products</a></li>
