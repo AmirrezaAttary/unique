@@ -162,6 +162,21 @@
         }
 
         /* ===== HERO ===== */
+        /* تنظیمات برای کل صفحه */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url({% static 'img/image.png' %});
+            background-repeat: repeat;
+            /* تکرار در کل صفحه */
+            background-size: 340px;
+            /* اندازه تصویر */
+            background-position: center;
+            background-color: #eef1f8;
+            /* رنگ پس‌زمینه ثابت */
+        }
+
+        /* تنظیمات هیرو */
         .hero {
             position: relative;
             min-height: auto;
@@ -172,22 +187,15 @@
             text-align: center;
             padding: 130px 24px 50px;
             overflow: hidden;
-            background-color: #eef1f8;
+            /* بک‌گراند اختصاصی هیرو حذف شد تا تصویر بادی دیده شود */
+            background-color: transparent;
             margin-top: -750px;
+            z-index: 1;
+            /* برای اینکه محتوای هیرو روی تصویر بیفتد */
         }
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: url({% static 'img/image.png' %});
-            background-repeat: repeat;
-            background-position: center;
-            background-size: 340px;
-            opacity: 0.08;
-            z-index: 0;
-            pointer-events: none;
-        }
+        /* حذف کامل بخش .hero::before چون دیگر به بک‌گراند نیاز ندارد */
+
 
         .hero-glow-1 {
             position: absolute;
