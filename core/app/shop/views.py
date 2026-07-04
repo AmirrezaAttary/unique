@@ -9,7 +9,7 @@ def shop_index(request):
     products.sort(key=lambda p: p.category.first().title if p.category.exists() else '')
 
     context = {
-        'categorized_products': products,
+        'products': products,
         'categories': categories,
         'products_count': len(products),
         'categories_count': categories.count(),
