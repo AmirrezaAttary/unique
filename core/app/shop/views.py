@@ -3,21 +3,16 @@ from .models import ProductModel, ProductCategoryModel
 
 
 def shop_index(request):
-    categories = ProductCategoryModel.objects.prefetch_related('productmodel_set').all()
-    
-    # ساخت لیستی از (کتگوری، محصولات آن کتگوری)
-    categorized_products = []
-    for category in categories:
-        products = category.productmodel_set.all()
-        if products.exists():
-            categorized_products.append({
-                'category': category,
-                'products': products,
-            })
+    products = list(ProductModel.objects.prefetch_related('category').all())
+    categories = ProductCategoryModel.objects.all()
+
+    # مرتب‌سازی محصولات بر اساس عنوان اولین کتگوریشون
+    products.sort(key=lambda p: p.category.first().title if p.category.exists() else '')
 
     context = {
-        'categorized_products': categorized_products,
-        'products_count': ProductModel.objects.count(),
+        'categorized_products': products,
+        'categories': categories,
+        'products_count': len(products),
         'categories_count': categories.count(),
     }
     return render(request, 'shop/index.html', context)
