@@ -4,9 +4,11 @@ from .models import ProductModel, ProductCategoryModel
 
 def shop_index(request):
     products = list(ProductModel.objects.prefetch_related('category').all())
+    print("PRODUCTS COUNT:", len(products))
+    for p in products:
+        print(p.title, "-> categories:", list(p.category.all()))
+    
     categories = ProductCategoryModel.objects.all()
-
-    # مرتب‌سازی محصولات بر اساس عنوان اولین کتگوریشون
     products.sort(key=lambda p: p.category.first().title if p.category.exists() else '')
 
     context = {
