@@ -170,89 +170,7 @@
             position: relative;
         }
 
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('{% static "img/logo6.png" %}'),
-            url('{% static "img/logo6.png" %}'),
-            url('{% static "img/logo6.png" %}'),
-            url('{% static "img/logo6.png" %}'),
-            url('{% static "img/logo6.png" %}'),
 
-            url('{% static "img/logo6.png" %}'),
-            url('{% static "img/logo6.png" %}'),
-            url('{% static "img/logo6.png" %}'),
-            url('{% static "img/logo6.png" %}'),
-            url('{% static "img/logo6.png" %}');
-
-            background-repeat: no-repeat;
-
-            /*
-      First 5:
-      from right top to left bottom
-
-      Second 5:
-      from left top to right bottom
-    */
-            background-position:
-                92% 8%,
-                72% 24%,
-                52% 40%,
-                32% 56%,
-                12% 72%,
-
-                8% 8%,
-                28% 24%,
-                48% 40%,
-                68% 56%,
-                88% 72%;
-
-            background-size: 120px 120px;
-            opacity: 0.25;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        @media (max-width: 768px) {
-            body::before {
-                background-image: url('{% static "img/logo6.png" %}'),
-                url('{% static "img/logo6.png" %}'),
-                url('{% static "img/logo6.png" %}'),
-                url('{% static "img/logo6.png" %}'),
-                url('{% static "img/logo6.png" %}'),
-                url('{% static "img/logo6.png" %}'),
-
-                url('{% static "img/logo6.png" %}'),
-                url('{% static "img/logo6.png" %}'),
-                url('{% static "img/logo6.png" %}'),
-                url('{% static "img/logo6.png" %}'),
-                url('{% static "img/logo6.png" %}'),
-                url('{% static "img/logo6.png" %}');
-
-                background-repeat: no-repeat;
-
-                background-position:
-                    95% 5%,
-                    78% 20%,
-                    61% 35%,
-                    44% 50%,
-                    27% 65%,
-                    10% 80%,
-
-                    5% 5%,
-                    22% 20%,
-                    39% 35%,
-                    56% 50%,
-                    73% 65%,
-                    90% 80%;
-
-                background-size: 85px 85px;
-                opacity: 0.25;
-            }
-        }
 
 
 
@@ -1019,11 +937,74 @@
                 font-size: 1.2rem;
             }
         }
+
+        .bg-pattern {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.12;
+}
+
+.bg-pattern .p {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background: url('{% static "img/logo6.png" %}') no-repeat center/contain;
+}
+
+/* right -> downward angled */
+.bg-pattern .r1 { top: 2%; right: 6%; }
+.bg-pattern .r2 { top: 18%; right: 22%; }
+.bg-pattern .r3 { top: 34%; right: 38%; }
+.bg-pattern .r4 { top: 50%; right: 54%; }
+.bg-pattern .r5 { top: 66%; right: 70%; }
+
+/* left -> downward angled */
+.bg-pattern .l1 { top: 10%; left: 6%; }
+.bg-pattern .l2 { top: 26%; left: 22%; }
+.bg-pattern .l3 { top: 42%; left: 38%; }
+.bg-pattern .l4 { top: 58%; left: 54%; }
+.bg-pattern .l5 { top: 74%; left: 70%; }
+
+@media (max-width: 768px) {
+    .bg-pattern .p {
+        width: 80px;
+        height: 80px;
+    }
+
+    .bg-pattern .r1 { top: 4%; right: 4%; }
+    .bg-pattern .r2 { top: 20%; right: 20%; }
+    .bg-pattern .r3 { top: 36%; right: 36%; }
+    .bg-pattern .r4 { top: 52%; right: 52%; }
+    .bg-pattern .r5 { top: 68%; right: 68%; }
+
+    .bg-pattern .l1 { top: 12%; left: 4%; }
+    .bg-pattern .l2 { top: 28%; left: 20%; }
+    .bg-pattern .l3 { top: 44%; left: 36%; }
+    .bg-pattern .l4 { top: 60%; left: 52%; }
+    .bg-pattern .l5 { top: 76%; left: 68%; }
+}
+
     </style>
 </head>
 
 <body>
 
+
+    <div class="bg-pattern">
+        <span class="p r1"></span>
+        <span class="p r2"></span>
+        <span class="p r3"></span>
+        <span class="p r4"></span>
+        <span class="p r5"></span>
+
+        <span class="p l1"></span>
+        <span class="p l2"></span>
+        <span class="p l3"></span>
+        <span class="p l4"></span>
+        <span class="p l5"></span>
+    </div>
     <!-- ===== NAV ===== -->
     <nav>
         <a style="display: flex; justify-content: center; gap: 3px;" href="#" class="nav-logo"
