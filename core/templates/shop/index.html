@@ -131,6 +131,51 @@
             transition: all 0.3s;
         }
 
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 16px;
+                justify-content: space-between;
+                gap: 12px;
+            }
+
+            .nav-logo {
+                flex: 1;
+                display: flex;
+                justify-content: flex-start;
+                max-height: 60px;
+            }
+
+            .nav-logo img {
+                order: 2;
+                margin: 0 auto;
+            }
+
+            .nav-logo div {
+                order: 1;
+                flex-shrink: 0;
+            }
+
+            .nav-center {
+                display: none;
+            }
+
+            .nav-profile {
+                flex: 1;
+                justify-content: flex-end;
+                gap: 8px;
+            }
+
+            .profile-name,
+            .profile-role {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+
         .mobile-menu {
             display: flex;
             flex-direction: column;
@@ -964,7 +1009,6 @@
             background: url('{% static "img/logo6.png" %}') no-repeat center/contain;
         }
 
-        /* از راست به چپ-پایین با زاویه‌ی ثابت */
         .bg-pattern .r1 {
             top: calc(1 * var(--step));
             right: calc(1 * var(--step));
@@ -990,7 +1034,6 @@
             right: calc(5 * var(--step));
         }
 
-        /* از چپ به راست-پایین با زاویه‌ی ثابت */
         .bg-pattern .l1 {
             top: calc(1 * var(--step));
             left: calc(1 * var(--step));
@@ -1027,14 +1070,12 @@
 
 <body>
 
-
     <div class="bg-pattern">
         <span class="p r1"></span>
         <span class="p r2"></span>
         <span class="p r3"></span>
         <span class="p r4"></span>
         <span class="p r5"></span>
-
         <span class="p l1"></span>
         <span class="p l2"></span>
         <span class="p l3"></span>
