@@ -986,20 +986,12 @@
         .bg-pattern {
             position: fixed;
             inset: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .bg-pattern {
-            position: fixed;
-            inset: 0;
             pointer-events: none;
             z-index: -1;
             opacity: 0.42;
             --size: 110px;
-            --step: 140px;
+            --gap: 150px;
+            /* فاصله بین لوگوها */
         }
 
         .bg-pattern .p {
@@ -1010,173 +1002,99 @@
         }
 
         .bg-pattern .r1 {
-            top: calc(1 * var(--step));
-            right: calc(1 * var(--step));
+            top: calc(0 * var(--gap));
+            right: calc(0 * var(--gap));
         }
 
         .bg-pattern .r2 {
-            top: calc(2 * var(--step));
-            right: calc(2 * var(--step));
+            top: calc(1 * var(--gap));
+            right: calc(1 * var(--gap));
         }
 
         .bg-pattern .r3 {
-            top: calc(3 * var(--step));
-            right: calc(3 * var(--step));
+            top: calc(2 * var(--gap));
+            right: calc(2 * var(--gap));
         }
 
         .bg-pattern .r4 {
-            top: calc(4 * var(--step));
-            right: calc(4 * var(--step));
+            top: calc(3 * var(--gap));
+            right: calc(3 * var(--gap));
         }
 
         .bg-pattern .r5 {
-            top: calc(5 * var(--step));
-            right: calc(5 * var(--step));
-        }
-
-        .bg-pattern .l1 {
-            top: calc(1 * var(--step));
-            left: calc(1 * var(--step));
-        }
-
-        .bg-pattern .l2 {
-            top: calc(2 * var(--step));
-            left: calc(2 * var(--step));
-        }
-
-        .bg-pattern .l3 {
-            top: calc(3 * var(--step));
-            left: calc(3 * var(--step));
-        }
-
-        .bg-pattern .l4 {
-            top: calc(4 * var(--step));
-            left: calc(4 * var(--step));
-        }
-
-        .bg-pattern .l5 {
-            top: calc(5 * var(--step));
-            left: calc(5 * var(--step));
-        }
-
-        @media (max-width: 768px) {
-            .bg-pattern {
-                --size: 80px;
-                --step: 100px;
-            }
-        }
-
-        .bg-pattern {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.42;
-            --size: 110px;
-            --step: 140px;
-        }
-
-        .bg-pattern .p {
-            position: absolute;
-            width: var(--size);
-            height: var(--size);
-            background: url('{% static "img/logo6.png" %}') no-repeat center/contain;
-        }
-
-        .bg-pattern .r1 {
-            top: calc(1 * var(--step));
-            right: calc(1 * var(--step));
-        }
-
-        .bg-pattern .r2 {
-            top: calc(2 * var(--step));
-            right: calc(2 * var(--step));
-        }
-
-        .bg-pattern .r3 {
-            top: calc(3 * var(--step));
-            right: calc(3 * var(--step));
-        }
-
-        .bg-pattern .r4 {
-            top: calc(4 * var(--step));
-            right: calc(4 * var(--step));
-        }
-
-        .bg-pattern .r5 {
-            top: calc(5 * var(--step));
-            right: calc(5 * var(--step));
+            top: calc(4 * var(--gap));
+            right: calc(4 * var(--gap));
         }
 
         .bg-pattern .r6 {
-            top: calc(6 * var(--step));
-            right: calc(6 * var(--step));
+            top: calc(5 * var(--gap));
+            right: calc(5 * var(--gap));
         }
 
         .bg-pattern .r7 {
-            top: calc(7 * var(--step));
-            right: calc(7 * var(--step));
+            top: calc(6 * var(--gap));
+            right: calc(6 * var(--gap));
         }
 
         .bg-pattern .r8 {
-            top: calc(8 * var(--step));
-            right: calc(8 * var(--step));
+            top: calc(7 * var(--gap));
+            right: calc(7 * var(--gap));
         }
 
         .bg-pattern .r9 {
-            top: calc(9 * var(--step));
-            right: calc(9 * var(--step));
+            top: calc(8 * var(--gap));
+            right: calc(8 * var(--gap));
         }
 
         .bg-pattern .l1 {
-            top: calc(1 * var(--step));
-            left: calc(1 * var(--step));
+            top: calc(0 * var(--gap));
+            left: calc(0 * var(--gap));
         }
 
         .bg-pattern .l2 {
-            top: calc(2 * var(--step));
-            left: calc(2 * var(--step));
+            top: calc(1 * var(--gap));
+            left: calc(1 * var(--gap));
         }
 
         .bg-pattern .l3 {
-            top: calc(3 * var(--step));
-            left: calc(3 * var(--step));
+            top: calc(2 * var(--gap));
+            left: calc(2 * var(--gap));
         }
 
         .bg-pattern .l4 {
-            top: calc(4 * var(--step));
-            left: calc(4 * var(--step));
+            top: calc(3 * var(--gap));
+            left: calc(3 * var(--gap));
         }
 
         .bg-pattern .l5 {
-            top: calc(5 * var(--step));
-            left: calc(5 * var(--step));
+            top: calc(4 * var(--gap));
+            left: calc(4 * var(--gap));
         }
 
         .bg-pattern .l6 {
-            top: calc(6 * var(--step));
-            left: calc(6 * var(--step));
+            top: calc(5 * var(--gap));
+            left: calc(5 * var(--gap));
         }
 
         .bg-pattern .l7 {
-            top: calc(7 * var(--step));
-            left: calc(7 * var(--step));
+            top: calc(6 * var(--gap));
+            left: calc(6 * var(--gap));
         }
 
         .bg-pattern .l8 {
-            top: calc(8 * var(--step));
-            left: calc(8 * var(--step));
+            top: calc(7 * var(--gap));
+            left: calc(7 * var(--gap));
         }
 
         .bg-pattern .l9 {
-            top: calc(9 * var(--step));
-            left: calc(9 * var(--step));
+            top: calc(8 * var(--gap));
+            left: calc(8 * var(--gap));
         }
 
         @media (max-width: 768px) {
             .bg-pattern {
                 --size: 70px;
-                --step: 90px;
+                --gap: 100px;
             }
         }
     </style>
@@ -1204,6 +1122,7 @@
         <span class="p l8"></span>
         <span class="p l9"></span>
     </div>
+
 
     <!-- ===== NAV ===== -->
     <nav>
