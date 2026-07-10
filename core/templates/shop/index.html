@@ -985,218 +985,117 @@
 
         .bg-pattern {
 
-            position: fixed;
-            inset: 0;
+    position: fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:-1;
+    opacity:.45;
 
-            width: 100%;
-            height: 100%;
+}
 
-            pointer-events: none;
 
-            z-index: -1;
+.line {
 
-            opacity: .45;
+    position:absolute;
 
-        }
+    display:flex;
 
+    gap:90px;
 
-        .bg-pattern .p {
+    transform:rotate(-35deg);
 
-            position: absolute;
+}
 
-            width: 80px;
-            height: 80px;
 
+.line span {
 
-            background:url('{% static "img/logo6.png" %}') no-repeat center/contain;
+    width:70px;
+    height:70px;
 
-        }
+    background:url('{% static "img/logo6.png" %}')
+    no-repeat center/contain;
 
+}
 
 
-        /*
- خط بالا سمت راست
- فقط یک لوگو
-*/
 
-        .p1 {
+/* خط ها */
 
-            top: 5%;
-            right: 8%;
+.line1 {
 
-        }
+    top:5%;
+    right:10%;
 
+}
 
 
-        /*
- خط دوم
- دو تا لوگو
-*/
+.line2 {
 
-        .p2 {
+    top:18%;
+    right:20%;
 
-            top: 15%;
-            right: 28%;
+}
 
-        }
 
+.line3 {
 
-        .p3 {
+    top:32%;
+    right:30%;
 
-            top: 20%;
-            right: 10%;
+}
 
-        }
 
+.line4 {
 
+    top:48%;
+    left:5%;
 
+}
 
-        /*
- خط سوم
- سه تا لوگو
-*/
 
-        .p4 {
+.line5 {
 
-            top: 32%;
-            left: 10%;
+    top:65%;
+    left:25%;
 
-        }
+}
 
 
-        .p5 {
+.line6 {
 
-            top: 38%;
-            left: 35%;
+    top:78%;
+    left:45%;
 
-        }
+}
 
 
-        .p6 {
+.line7 {
 
-            top: 30%;
-            left: 65%;
+    bottom:5%;
+    left:70%;
 
-        }
+}
 
 
+@media(max-width:768px){
 
+.line span{
 
-        /*
- خط وسط
- بیشترین تعداد
-*/
+    width:35px;
+    height:35px;
 
-        .p7 {
+}
 
-            top: 48%;
-            left: -5%;
 
-        }
+.line{
 
+    gap:45px;
 
-        .p8 {
+}
 
-            top: 52%;
-            left: 22%;
-
-        }
-
-
-        .p9 {
-
-            top: 46%;
-            left: 48%;
-
-        }
-
-
-        .p10 {
-
-            top: 55%;
-            left: 75%;
-
-        }
-
-
-
-
-
-        /*
- خط پایین
- دوباره کمتر
-*/
-
-        .p11 {
-
-            bottom: 25%;
-            left: 5%;
-
-        }
-
-
-        .p12 {
-
-            bottom: 20%;
-            left: 35%;
-
-        }
-
-
-        .p13 {
-
-            bottom: 28%;
-            right: 8%;
-
-        }
-
-
-
-
-
-        /*
- آخر صفحه
-*/
-
-        .p14 {
-
-            bottom: 5%;
-            left: 25%;
-
-        }
-
-
-        .p15 {
-
-            bottom: 8%;
-            right: 30%;
-
-        }
-
-
-
-
-
-
-        @media(max-width:768px) {
-
-
-            .bg-pattern {
-
-                opacity: .5;
-
-            }
-
-
-            .bg-pattern .p {
-
-                width: 38px;
-                height: 38px;
-
-            }
-
-
-        }
+}
     </style>
 </head>
 
@@ -1205,26 +1104,42 @@
 
     <div class="bg-pattern">
 
-        <span class="p p1"></span>
+        <div class="line line1">
+            <span></span>
+        </div>
 
-        <span class="p p2"></span>
-        <span class="p p3"></span>
+        <div class="line line2">
+            <span></span>
+            <span></span>
+        </div>
 
-        <span class="p p4"></span>
-        <span class="p p5"></span>
-        <span class="p p6"></span>
+        <div class="line line3">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-        <span class="p p7"></span>
-        <span class="p p8"></span>
-        <span class="p p9"></span>
-        <span class="p p10"></span>
+        <div class="line line4">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-        <span class="p p11"></span>
-        <span class="p p12"></span>
-        <span class="p p13"></span>
+        <div class="line line5">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-        <span class="p p14"></span>
-        <span class="p p15"></span>
+        <div class="line line6">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="line line7">
+            <span></span>
+        </div>
 
     </div>
 
