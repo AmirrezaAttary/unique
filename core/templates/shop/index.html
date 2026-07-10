@@ -983,166 +983,118 @@
             }
         }
 
-        .bg-pattern {
+      .bg-pattern{
 
-    position: fixed;
-    inset:0;
-    width:100%;
-    height:100%;
-    pointer-events:none;
-    z-index:-1;
-    opacity:.45;
+position:fixed;
+inset:0;
 
-}
-
-
-.line {
-
-    position:absolute;
-
-    display:flex;
-
-    gap:90px;
-
-    transform:rotate(-35deg);
+display:flex;
+flex-direction:column;
+justify-content:space-around;
 
 }
 
 
-.line span {
+.row{
 
-    width:70px;
-    height:70px;
-
-    background:url('{% static "img/logo6.png" %}')
-    no-repeat center/contain;
+display:flex;
+justify-content:center;
+gap:100px;
 
 }
 
 
+.row span{
 
-/* خط ها */
+width:70px;
+height:70px;
 
-.line1 {
+background:url('{% static "img/logo6.png" %}')
+center/contain no-repeat;
 
-    top:5%;
-    right:10%;
+}
+.row1{
+transform:translateX(250px);
+}
 
+.row2{
+transform:translateX(120px);
 }
 
 
-.line2 {
-
-    top:18%;
-    right:20%;
-
+.row3{
+transform:translateX(-20px);
 }
 
 
-.line3 {
-
-    top:32%;
-    right:30%;
-
+.row4{
+transform:translateX(-100px);
 }
 
 
-.line4 {
-
-    top:48%;
-    left:5%;
-
+.row5{
+transform:translateX(-20px);
 }
 
 
-.line5 {
-
-    top:65%;
-    left:25%;
-
+.row6{
+transform:translateX(120px);
 }
 
 
-.line6 {
-
-    top:78%;
-    left:45%;
-
-}
-
-
-.line7 {
-
-    bottom:5%;
-    left:70%;
-
-}
-
-
-@media(max-width:768px){
-
-.line span{
-
-    width:35px;
-    height:35px;
-
-}
-
-
-.line{
-
-    gap:45px;
-
-}
-
+.row7{
+transform:translateX(250px);
 }
     </style>
 </head>
 
 <body>
 
-
     <div class="bg-pattern">
 
-        <div class="line line1">
+        <div class="row row1">
             <span></span>
         </div>
 
-        <div class="line line2">
-            <span></span>
-            <span></span>
-        </div>
-
-        <div class="line line3">
-            <span></span>
+        <div class="row row2">
             <span></span>
             <span></span>
         </div>
 
-        <div class="line line4">
-            <span></span>
+        <div class="row row3">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
-        <div class="line line5">
+
+        <div class="row row4">
+            <span></span>
+            <span></span>
             <span></span>
             <span></span>
             <span></span>
         </div>
 
-        <div class="line line6">
+
+        <div class="row row5">
+            <span></span>
             <span></span>
             <span></span>
         </div>
 
-        <div class="line line7">
+
+        <div class="row row6">
+            <span></span>
+            <span></span>
+        </div>
+
+
+        <div class="row row7">
             <span></span>
         </div>
 
     </div>
-
 
     <!-- ===== NAV ===== -->
     <nav>
