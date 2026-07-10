@@ -983,73 +983,77 @@
             }
         }
 
-      .bg-pattern {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  pointer-events: none;
-  z-index: -1;
-  overflow: hidden;
-}
+        .bg-pattern {
+            position: fixed;
+            inset: 90px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+            padding-inline: 0;
+            box-sizing: border-box;
+        }
 
-.row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-  width: 100%;
-}
+        .pattern-row {
+            display: flex;
+            justify-content: flex-start;
+            /* از سمت چپ شروع بشه */
+            align-items: center;
+            gap: 92px;
+            width: 100%;
+            padding-left: 0;
+            box-sizing: border-box;
+        }
 
-.row span {
-  width: 70px;
-  height: 70px;
-  flex: 0 0 70px;
-  background: url("{% static 'img/logo6.png' %}") center/contain no-repeat;
-}
+        .pattern-row span {
+            width: 68px;
+            height: 68px;
+            flex: 0 0 68px;
+            background: url("{% static 'img/logo6.png' %}") center/contain no-repeat;
+            opacity: 0.15;
+            /* تمیزتر و بک‌گراندی‌تر */
+        }
 
-/* افست ردیف‌ها برای مورب شدن پترن */
-.row1 { transform: translateX(250px); }
-.row2 { transform: translateX(120px); }
-.row3 { transform: translateX(-20px); }
-.row4 { transform: translateX(-100px); }
-.row5 { transform: translateX(-20px); }
-.row6 { transform: translateX(120px); }
-.row7 { transform: translateX(250px); }
+        /* استگر/شیفت ردیف‌ها برای مورب شدن */
+        .shift-1 {
+            transform: translateX(0px);
+        }
 
-.row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-  width: 100%;
-  padding-inline: 60px;
-  box-sizing: border-box;
-}
+        .shift-2 {
+            transform: translateX(60px);
+        }
 
+        .shift-3 {
+            transform: translateX(120px);
+        }
+
+        .shift-4 {
+            transform: translateX(180px);
+        }
+
+        .shift-5 {
+            transform: translateX(240px);
+        }
+
+        .shift-6 {
+            transform: translateX(300px);
+        }
     </style>
 </head>
 
 <body>
 
     <div class="bg-pattern">
-        <div class="row row1">
+        <div class="pattern-row">
             <span></span>
-        </div>
-
-        <div class="row row2">
-            <span></span>
-            <span></span>
-        </div>
-
-        <div class="row row3">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
-        <div class="row row4">
+        <div class="pattern-row shift-1">
             <span></span>
             <span></span>
             <span></span>
@@ -1057,21 +1061,44 @@
             <span></span>
         </div>
 
-        <div class="row row5">
+        <div class="pattern-row shift-2">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="pattern-row shift-3">
+            <span></span>
+            <span></span>
             <span></span>
             <span></span>
             <span></span>
         </div>
 
-        <div class="row row6">
+        <div class="pattern-row shift-4">
+            <span></span>
+            <span></span>
             <span></span>
             <span></span>
         </div>
 
-        <div class="row row7">
+        <div class="pattern-row shift-5">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="pattern-row shift-6">
+            <span></span>
+            <span></span>
+            <span></span>
             <span></span>
         </div>
     </div>
+
 
 
     <!-- ===== NAV ===== -->
