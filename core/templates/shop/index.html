@@ -1096,15 +1096,19 @@
 
     <!-- ===== NAV ===== -->
     <nav>
-        <a style="display: flex; justify-content: center; gap: 3px;" href="#" class="nav-logo"
-            style="display: flex; align-items: center; gap: 12px; text-decoration: none; max-height: 150px;">
-            <div style="display: flex; justify-content: center; flex-direction: column;">
-                <span style="font-size: 14px; color: #3b82f6;">UNIQUE </span>
-                <span style="font-size: 14px; color: #3b82f6;"> LABORATORY</span>
-            </div>
+        <!-- یک دیو والد که کلاس nav-logo را دارد تا CSSهای قبلی خراب نشوند -->
+        <div class="nav-logo" style="display: flex; align-items: center; gap: 12px; max-height: 60px;">
+            <!-- نوشته داخل تگ a -->
+            <a href="#" style="text-decoration: none; display: flex;">
+                <div style="display: flex; justify-content: center; flex-direction: column;">
+                    <span style="font-size: 14px; color: #3b82f6; font-weight: 800; line-height: 1.2;">UNIQUE</span>
+                    <span style="font-size: 14px; color: #3b82f6; font-weight: 800; line-height: 1.2;">LABORATORY</span>
+                </div>
+            </a>
+            <!-- عکس کاملاً خارج از تگ a و به عنوان چیلدرن جدا -->
             <img src="{% static 'img/logo5.png' %}" alt="Logo"
                 style="width: auto; height: 100%; max-height: 60px; object-fit: contain;">
-        </a>
+        </div>
 
         <ul class="nav-center">
             <li><a href="#home">Home</a></li>
@@ -1126,11 +1130,14 @@
         </div>
     </nav>
 
+    <!-- دیو بازشوی موبایل -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="#home">Home</a>
         <a href="#products">Products</a>
         <a href="#about">About</a>
     </div>
+
+
 
     <!-- ===== HERO ===== -->
     <section class="hero" id="home">
@@ -1314,6 +1321,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            hamburgerBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+        });
+    </script>
+
 
     <script>
         // ===== Category filter =====
