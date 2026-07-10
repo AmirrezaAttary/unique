@@ -983,84 +983,96 @@
             }
         }
 
-        .bg-pattern {
-            position: fixed;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            padding: 100px 0;
-        }
+      .bg-pattern {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
 
-        .row {
-            display: flex;
-            justify-content: center;
-            gap: 120px;
-            align-items: center;
-        }
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  width: 100%;
+}
 
-        .row1 {
-            transform: translateX(-240px);
-        }
+.row span {
+  width: 70px;
+  height: 70px;
+  flex: 0 0 70px;
+  background: url("{% static 'img/logo6.png' %}") center/contain no-repeat;
+}
 
-        .row2 {
-            transform: translateX(-120px);
-        }
+/* افست ردیف‌ها برای مورب شدن پترن */
+.row1 { transform: translateX(250px); }
+.row2 { transform: translateX(120px); }
+.row3 { transform: translateX(-20px); }
+.row4 { transform: translateX(-100px); }
+.row5 { transform: translateX(-20px); }
+.row6 { transform: translateX(120px); }
+.row7 { transform: translateX(250px); }
 
-        .row3 {
-            transform: translateX(0);
-        }
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  width: 100%;
+  padding-inline: 60px;
+  box-sizing: border-box;
+}
 
-        .row4 {
-            transform: translateX(120px);
-        }
-
-        .row5 {
-            transform: translateX(0);
-        }
-
-        .row6 {
-            transform: translateX(-120px);
-        }
-
-        .row7 {
-            transform: translateX(-240px);
-        }
-
-        .row span {
-            width: 60px;
-            height: 60px;
-            background: url('{% static "img/logo6.png" %}') center/contain no-repeat;
-            opacity: 0.12;
-            flex-shrink: 0;
-        }
     </style>
 </head>
 
 <body>
 
     <div class="bg-pattern">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <div class="row row1">
+            <span></span>
+        </div>
+
+        <div class="row row2">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="row row3">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="row row4">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="row row5">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="row row6">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="row row7">
+            <span></span>
+        </div>
     </div>
+
 
     <!-- ===== NAV ===== -->
     <nav>
