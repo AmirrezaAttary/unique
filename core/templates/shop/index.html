@@ -985,60 +985,69 @@
 
         .bg-pattern {
             position: fixed;
-            inset: 90px 0;
+            /* ایجاد فاصله ۹۰ پیکسلی از بالا و پایین صفحه */
+            top: 90px;
+            bottom: 90px;
+            left: 0;
+            right: 0;
+
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             pointer-events: none;
             overflow: hidden;
             z-index: -1;
-            padding-inline: 0;
-            box-sizing: border-box;
         }
 
         .pattern-row {
             display: flex;
             justify-content: flex-start;
-            /* از سمت چپ شروع بشه */
             align-items: center;
-            gap: 92px;
-            width: 100%;
-            padding-left: 0;
-            box-sizing: border-box;
+            /* فاصله دقیق و منظم بین عکس‌های داخل هر ردیف */
+            gap: 110px;
+            width: 120%;
+            /* عرض بیشتر برای جلوگیری از خالی شدن لبه‌ها هنگام شیفت به چپ و راست */
         }
 
         .pattern-row span {
-            width: 68px;
-            height: 68px;
-            flex: 0 0 68px;
+            width: 70px;
+            height: 70px;
+            flex: 0 0 70px;
             background: url("{% static 'img/logo6.png' %}") center/contain no-repeat;
-            opacity: 0.15;
-            /* تمیزتر و بک‌گراندی‌تر */
+            opacity: 0.6;
+            /* اعمال شفافیت درخواستی شما */
         }
 
-        /* استگر/شیفت ردیف‌ها برای مورب شدن */
-        .shift-1 {
+        /* 
+  شیفت دادن ردیف‌ها به صورت پله‌ای به سمت چپ (مقادیر منفی) 
+  این کار باعث ایجاد خطوط مورب موازی و پر شدن کامل سمت چپ صفحه می‌شود
+*/
+        .row-1 {
+            transform: translateX(-150px);
+        }
+
+        .row-2 {
+            transform: translateX(-100px);
+        }
+
+        .row-3 {
+            transform: translateX(-50px);
+        }
+
+        .row-4 {
             transform: translateX(0px);
         }
 
-        .shift-2 {
-            transform: translateX(60px);
+        .row-5 {
+            transform: translateX(50px);
         }
 
-        .shift-3 {
-            transform: translateX(120px);
+        .row-6 {
+            transform: translateX(100px);
         }
 
-        .shift-4 {
-            transform: translateX(180px);
-        }
-
-        .shift-5 {
-            transform: translateX(240px);
-        }
-
-        .shift-6 {
-            transform: translateX(300px);
+        .row-7 {
+            transform: translateX(150px);
         }
     </style>
 </head>
@@ -1046,58 +1055,42 @@
 <body>
 
     <div class="bg-pattern">
-        <div class="pattern-row">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+        <!-- ردیف ۱ -->
+        <div class="pattern-row row-1">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <div class="pattern-row shift-1">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+        <!-- ردیف ۲ -->
+        <div class="pattern-row row-2">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <div class="pattern-row shift-2">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+        <!-- ردیف ۳ -->
+        <div class="pattern-row row-3">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <div class="pattern-row shift-3">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+        <!-- ردیف ۴ -->
+        <div class="pattern-row row-4">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <div class="pattern-row shift-4">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+        <!-- ردیف ۵ -->
+        <div class="pattern-row row-5">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <div class="pattern-row shift-5">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+        <!-- ردیف ۶ -->
+        <div class="pattern-row row-6">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <div class="pattern-row shift-6">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+        <!-- ردیف ۷ -->
+        <div class="pattern-row row-7">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
     </div>
+
 
 
 
