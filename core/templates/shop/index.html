@@ -1015,7 +1015,7 @@
             justify-content: flex-start;
             align-items: center;
             gap: 110px;
-            width: 120%;
+            width: 140%;
         }
 
         .pattern-row span {
@@ -1026,109 +1026,104 @@
             opacity: 0.6;
         }
 
-        /* ردیف‌های اصلی دسکتاپ */
+        /* دسکتاپ */
         .row-1 {
-            transform: translateX(-150px);
+            transform: translateX(-220px);
         }
 
         .row-2 {
-            transform: translateX(-100px);
+            transform: translateX(-150px);
         }
 
         .row-3 {
-            transform: translateX(-50px);
+            transform: translateX(-80px);
         }
 
         .row-4 {
-            transform: translateX(0px);
+            transform: translateX(0);
         }
 
         .row-5 {
-            transform: translateX(50px);
+            transform: translateX(80px);
         }
 
         .row-6 {
-            transform: translateX(100px);
-        }
-
-        .row-7 {
             transform: translateX(150px);
         }
 
-        /* ردیف‌های اضافه فقط برای موبایل */
+        .row-7 {
+            transform: translateX(220px);
+        }
+
         .mobile-only {
             display: none;
         }
 
         .row-mobile-top {
-            transform: translateX(-200px);
+            transform: translateX(-280px);
         }
 
         .row-mobile-bottom {
-            transform: translateX(200px);
+            transform: translateX(280px);
         }
 
-        /* =========================
-   حالت موبایل
-========================= */
+        /* موبایل */
         @media (max-width: 768px) {
             .bg-pattern {
-                top: 70px;
-                bottom: 70px;
+                top: 50px;
+                bottom: 50px;
             }
 
             .pattern-row {
-                gap: 70px;
-                width: 140%;
+                gap: 55px;
+                width: 190%;
             }
 
             .pattern-row span {
-                width: 50px;
-                height: 50px;
-                flex: 0 0 50px;
+                width: 44px;
+                height: 44px;
+                flex: 0 0 44px;
                 opacity: 0.5;
             }
 
-            /* نمایش دو ردیف اضافه در موبایل */
             .mobile-only {
                 display: flex;
             }
 
-            /* تنظیم شیفت ردیف‌ها برای موبایل */
             .row-mobile-top {
-                transform: translateX(-140px);
+                transform: translateX(-260px);
             }
 
             .row-1 {
-                transform: translateX(-110px);
+                transform: translateX(-220px);
             }
 
             .row-2 {
-                transform: translateX(-80px);
+                transform: translateX(-170px);
             }
 
             .row-3 {
-                transform: translateX(-50px);
+                transform: translateX(-120px);
             }
 
             .row-4 {
-                transform: translateX(-20px);
+                transform: translateX(-70px);
             }
 
             .row-5 {
-                transform: translateX(10px);
+                transform: translateX(-20px);
             }
 
             .row-6 {
-                transform: translateX(40px);
+                transform: translateX(30px);
             }
 
             .row-7 {
-                transform: translateX(70px);
+                transform: translateX(80px);
             }
 
             .row-mobile-bottom {
-                transform: translateX(100px);
+                transform: translateX(130px);
             }
         }
     </style>
@@ -1137,51 +1132,52 @@
 <body>
 
     <div class="bg-pattern">
-        <!-- ردیف اضافه برای موبایل - بالا -->
+        <!-- ردیف اضافه بالا برای موبایل -->
         <div class="pattern-row row-mobile-top mobile-only">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <!-- ردیف ۱ -->
+        <!-- ردیف 1 -->
         <div class="pattern-row row-1">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <!-- ردیف ۲ -->
+        <!-- ردیف 2 -->
         <div class="pattern-row row-2">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <!-- ردیف ۳ -->
+        <!-- ردیف 3 -->
         <div class="pattern-row row-3">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <!-- ردیف ۴ -->
+        <!-- ردیف 4 -->
         <div class="pattern-row row-4">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <!-- ردیف ۵ -->
+        <!-- ردیف 5 -->
         <div class="pattern-row row-5">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <!-- ردیف ۶ -->
+        <!-- ردیف 6 -->
         <div class="pattern-row row-6">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <!-- ردیف ۷ -->
+        <!-- ردیف 7 -->
         <div class="pattern-row row-7">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
-        <!-- ردیف اضافه برای موبایل - پایین -->
+        <!-- ردیف اضافه پایین برای موبایل -->
         <div class="pattern-row row-mobile-bottom mobile-only">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
     </div>
+
 
 
 
