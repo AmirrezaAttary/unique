@@ -984,215 +984,163 @@
         }
 
         .bg-pattern {
+
             position: fixed;
             inset: 0;
             width: 100vw;
             height: 100vh;
+
             pointer-events: none;
             z-index: -1;
-            opacity: 0.42;
-            --size: 110px;
-            --step: 140px;
+
+            opacity: .55;
+
         }
+
 
         .bg-pattern .p {
+
             position: absolute;
-            width: var(--size);
-            height: var(--size);
-            background: url('{% static "img/logo6.png" %}') no-repeat center/contain;
-        }
 
-        .bg-pattern .d1 {
-            top: calc(0 * var(--step));
-            left: calc(0 * var(--step));
-        }
+            width: 100px;
+            height: 100px;
 
-        .bg-pattern .d2 {
-            top: calc(1 * var(--step));
-            left: calc(1 * var(--step));
-        }
+            background:url('{% static "img/logo6.png" %}') no-repeat center/contain;
 
-        .bg-pattern .d3 {
-            top: calc(2 * var(--step));
-            left: calc(2 * var(--step));
-        }
-
-        .bg-pattern .d4 {
-            top: calc(3 * var(--step));
-            left: calc(3 * var(--step));
-        }
-
-        .bg-pattern .d5 {
-            top: calc(4 * var(--step));
-            left: calc(4 * var(--step));
-        }
-
-        .bg-pattern .d6 {
-            top: calc(5 * var(--step));
-            left: calc(5 * var(--step));
-        }
-
-        .bg-pattern .d7 {
-            top: calc(6 * var(--step));
-            left: calc(6 * var(--step));
-        }
-
-        .bg-pattern .d8 {
-            top: calc(7 * var(--step));
-            left: calc(7 * var(--step));
-        }
-
-        .bg-pattern .d9 {
-            top: calc(8 * var(--step));
-            left: calc(8 * var(--step));
-        }
-
-        .bg-pattern .e1 {
-            top: calc(0 * var(--step));
-            right: calc(0 * var(--step));
-        }
-
-        .bg-pattern .e2 {
-            top: calc(1 * var(--step));
-            right: calc(1 * var(--step));
-        }
-
-        .bg-pattern .e3 {
-            top: calc(2 * var(--step));
-            right: calc(2 * var(--step));
-        }
-
-        .bg-pattern .e4 {
-            top: calc(3 * var(--step));
-            right: calc(3 * var(--step));
-        }
-
-        .bg-pattern .e5 {
-            top: calc(4 * var(--step));
-            right: calc(4 * var(--step));
-        }
-
-        .bg-pattern .e6 {
-            top: calc(5 * var(--step));
-            right: calc(5 * var(--step));
-        }
-
-        .bg-pattern .e7 {
-            top: calc(6 * var(--step));
-            right: calc(6 * var(--step));
-        }
-
-        .bg-pattern .e8 {
-            top: calc(7 * var(--step));
-            right: calc(7 * var(--step));
-        }
-
-        .bg-pattern .e9 {
-            top: calc(8 * var(--step));
-            right: calc(8 * var(--step));
-        }
-
-        .bg-pattern-mobile {
-            display: none;
         }
 
 
-        .bg-pattern-mobile {
-            display: none;
+
+        /* بالا */
+
+        .p1 {
+            top: 3%;
+            left: 8%;
         }
 
 
-        .bg-pattern-mobile {
-            display: none;
+        .p2 {
+            top: 5%;
+            left: 45%;
         }
 
+
+        .p3 {
+            top: 4%;
+            right: 8%;
+        }
+
+
+
+        /* ردیف دوم */
+
+        .p4 {
+            top: 22%;
+            left: 18%;
+        }
+
+
+        .p5 {
+            top: 28%;
+            left: 50%;
+        }
+
+
+        .p6 {
+            top: 20%;
+            right: 18%;
+        }
+
+
+
+        /* وسط */
+
+        .p7 {
+            top: 42%;
+            left: 5%;
+        }
+
+
+        .p8 {
+            top: 48%;
+            left: 40%;
+        }
+
+
+        .p9 {
+            top: 42%;
+            right: 7%;
+        }
+
+
+
+        /* پایین */
+
+        .p10 {
+            top: 65%;
+            left: 15%;
+        }
+
+
+        .p11 {
+            top: 70%;
+            left: 55%;
+        }
+
+
+        .p12 {
+            top: 65%;
+            right: 18%;
+        }
+
+
+
+        /* آخر صفحه */
+
+        .p13 {
+            bottom: 5%;
+            left: 8%;
+        }
+
+
+        .p14 {
+            bottom: 8%;
+            left: 45%;
+        }
+
+
+        .p15 {
+            bottom: 5%;
+            right: 8%;
+        }
 
         @media(max-width:768px) {
-            .bg-pattern{
-                display: none !important;
-            }
 
-            .bg-pattern-mobile {
-                display: block;
-                position: fixed;
-                inset: 0;
-                width: 100vw;
-                height: 100vh;
-                pointer-events: none;
-                z-index: -1;
-                opacity: .35;
+            .bg-pattern {
+                opacity: .65;
             }
 
 
-            .bg-pattern-mobile .p {
-                position: absolute;
-                width: 65px;
-                height: 65px;
-                background:url('{% static "img/logo6.png" %}') no-repeat center/contain;
+            .bg-pattern .p {
+
+                width: 55px;
+                height: 55px;
+
             }
 
 
-
-            /* قطر از بالا چپ به پایین راست */
-
-            .p1 {
-                top: 7%;
-                left: 8%;
-            }
-
-
-            .p2 {
-                top: 25%;
-                left: 27%;
-            }
-
-
+            .p1,
+            .p2,
             .p3 {
-                top: 43%;
-                left: 50%;
-                transform: translateX(-50%);
+                top: 4%;
             }
 
 
-            .p4 {
-                bottom: 25%;
-                left: 27%;
+            .p13,
+            .p14,
+            .p15 {
+                bottom: 5%;
             }
-
-
-            .p5 {
-                bottom: 7%;
-                left: 8%;
-            }
-
-
-
-
-            /* قطر از بالا راست به پایین چپ */
-
-            .p6 {
-                top: 7%;
-                right: 8%;
-            }
-
-
-            .p7 {
-                top: 25%;
-                right: 27%;
-            }
-
-
-            .p8 {
-                bottom: 25%;
-                right: 27%;
-            }
-
-
-            .p9 {
-                bottom: 7%;
-                right: 8%;
-            }
-
 
         }
     </style>
@@ -1200,27 +1148,9 @@
 
 <body>
 
+
     <div class="bg-pattern">
-        <span class="p d1"></span>
-        <span class="p d2"></span>
-        <span class="p d3"></span>
-        <span class="p d4"></span>
-        <span class="p d5"></span>
-        <span class="p d6"></span>
-        <span class="p d7"></span>
-        <span class="p d8"></span>
-        <span class="p d9"></span>
-        <span class="p e1"></span>
-        <span class="p e2"></span>
-        <span class="p e3"></span>
-        <span class="p e4"></span>
-        <span class="p e5"></span>
-        <span class="p e6"></span>
-        <span class="p e7"></span>
-        <span class="p e8"></span>
-        <span class="p e9"></span>
-    </div>
-    <div class="bg-pattern-mobile">
+
         <span class="p p1"></span>
         <span class="p p2"></span>
         <span class="p p3"></span>
@@ -1230,6 +1160,13 @@
         <span class="p p7"></span>
         <span class="p p8"></span>
         <span class="p p9"></span>
+        <span class="p p10"></span>
+        <span class="p p11"></span>
+        <span class="p p12"></span>
+        <span class="p p13"></span>
+        <span class="p p14"></span>
+        <span class="p p15"></span>
+
     </div>
 
 
